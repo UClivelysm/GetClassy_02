@@ -67,6 +67,10 @@ public class Person {
         return this.getTitle() + " " + this.getFullName();
     }
 
+    public String toCSV(){
+        return ID + ", " + firstName + ", " + lastName + ", " + title + ", " + YOB;
+    }
+
     @Override
     public String toString() {
         return "Person{" +

@@ -5,6 +5,7 @@ public class PersonDemo {
 
         System.out.println(boy.getFullName());
         System.out.println(girl.getFormalName());
+        System.out.println(girl.toCSV());
 
     }
 }
