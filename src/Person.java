@@ -1,5 +1,5 @@
 import java.util.Objects;
-
+//might also want to create to json/XML
 public class Person {
 
     private String ID ="";
