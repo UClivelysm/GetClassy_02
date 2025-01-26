@@ -1,3 +1,4 @@
+import java.time.Year;
 import java.util.Objects;
 //might also want to create to json/XML
 public class Person {
@@ -49,11 +50,10 @@ public class Person {
         this.title = title;
     }
 
-
-
     public int getYOB() {
         return YOB;
     }
+
 
     public void setYOB(int YOB) {
         this.YOB = YOB;
@@ -67,9 +67,41 @@ public class Person {
         return this.getTitle() + " " + this.getFullName();
     }
 
+    public int getAge(){
+        int currentYear = Year.now().getValue();
+        return currentYear - this.YOB;
+    }
+    public int getAge(int Year){
+        return Year - this.YOB;
+    }
+
     public String toCSV(){
         return ID + ", " + firstName + ", " + lastName + ", " + title + ", " + YOB;
     }
+    public String toJSON(){
+        String retString ="";
+        char DQ = '\u0022';
+        retString = "{" +DQ+ "ID" + DQ+ ":" +DQ+ this.ID + DQ+ ",";
+        retString += " " +DQ+ "firstName" +DQ+ ":" +DQ+ this.firstName +DQ+ ",";
+        retString += " " +DQ+ "lastName" +DQ+ ":" +DQ+ this.lastName +DQ+ ",";
+        retString += " " +DQ+ "title" +DQ+ ":" +DQ+ this.title +DQ+ ",";
+        retString += " " +DQ+ "YOB" +DQ+ ":" + this.YOB +"}";
+        return retString;
+    }
+    public String toXML(){
+        String retString ="";
+
+        retString = "<Person>";
+        retString += "<ID>" + this.ID + "</ID>";
+        retString += "<firstName>" + this.firstName + "</firstName>";
+        retString += "<lastName>" + this.lastName + "</lastName>";
+        retString += "<title>" + this.title + "</title>";
+        retString += "<YOB>" + this.YOB + "</YOB>";
+        retString += "</Person>";
+        return retString;
+    }
+
+
 
     @Override
     public String toString() {

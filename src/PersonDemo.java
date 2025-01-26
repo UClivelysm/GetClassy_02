@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class PersonDemo {
     public static void main(String[] args) {
 
@@ -13,8 +12,12 @@ public class PersonDemo {
         System.out.println(girl.getFormalName());
         System.out.println(girl.toCSV());
 
-        String id = sio.getNonZeroLenString("Enter Your ID");
-        System.out.println("ID is " + id);
+        System.out.println(boy.toJSON());
+        System.out.println(girl.toXML());
+
+//        String id = sio.getNonZeroLenString("Enter Your ID");
+//        System.out.println("ID is " + id);
+
 
     }
 }

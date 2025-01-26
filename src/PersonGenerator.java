@@ -31,11 +31,13 @@ public class PersonGenerator {
             firstName = SafeInput.getNonZeroLenString(in, "Enter your first name");
             lastName = SafeInput.getNonZeroLenString(in, "Enter your last name");
             title = SafeInput.getNonZeroLenString(in, "Enter your title");
-            YOB = SafeInput.getRangedInt(in, "Enter your year of birth", 1000, 9999);
+            YOB = SafeInput.getRangedInt(in, "Enter your year of birth", 1940, 2010);
 
-            rec = ID + ", " + firstName + ", " + lastName + ", " + title + ", " + YOB;
-            people.add(rec);
-            System.out.println(rec);
+            Person person = new Person(ID, firstName, lastName, title, YOB);
+            people.add((person.toCSV()));
+//            rec = ID + ", " + firstName + ", " + lastName + ", " + title + ", " + YOB;
+//            people.add(rec);
+            System.out.println(person.toCSV());
 
             doneInput = SafeInput.getYNConfirm(in, "Are you done?");
         }while (!doneInput);
@@ -44,7 +46,7 @@ public class PersonGenerator {
 
 
     File workingDirectory = new File(System.getProperty("user.dir"));
-        Path file = Paths.get(workingDirectory.getPath() + "//src//PersonTestData.txt"); //Unix/Linux file system version
+        Path file = Paths.get(workingDirectory.getPath() + "//src//PersonTestData.csv"); //Unix/Linux file system version
         //Path file = Paths.get(workingDirectory.getPath() + "\\src\\data.txt"); //Windows file system version
 
         try
