@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.Year;
 import java.util.ArrayList;
 
 public class PersonReader
@@ -73,8 +74,9 @@ public class PersonReader
                             lastName  = fields[2].trim();
                             title     = fields[3].trim();
                             yob       = Integer.parseInt(fields[4].trim());
+                            Person person = new Person(id, firstName, lastName, title, yob);
 
-                            System.out.printf("\n%-8s%-25s%-25s%-6s%6d", id, firstName, lastName, title, yob);
+                            System.out.printf("\n%-8s%-25s%-25s%-6s%6d", person.getID(), person.getFirstName(), person.getLastName(), person.getTitle(), person.getYOB());
                         }
                         else {
                             System.out.println("Found a record that may be corrupt: ");
