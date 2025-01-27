@@ -44,7 +44,7 @@ public class ProductWriter {
 
 
     File workingDirectory = new File(System.getProperty("user.dir"));
-        Path file = Paths.get(workingDirectory.getPath() + "//src//ProductTestData.csv"); //Unix/Linux file system version
+        Path file = Paths.get(workingDirectory.getPath() + "//src//ProductTestData.cs"); //Unix/Linux file system version
         //Path file = Paths.get(workingDirectory.getPath() + "\\src\\data.txt"); //Windows file system version
 
         try
