@@ -72,8 +72,9 @@ public class ProductReader
                             name = fields[1].trim();
                             description  = fields[2].trim();
                             cost = Double.parseDouble(fields[3].trim());
+                            Product product = new Product(id, name,description, cost);
 
-                            System.out.printf("\n%-8s%-25s%-35s%6.2f", id, name, description, cost);
+                            System.out.printf("\n%-8s%-25s%-35s%6.2f", product.getID(), product.getName(), product.getDescription(), product.getCost());
                         }
                         else {
                             System.out.println("Found a record that may be corrupt: ");
