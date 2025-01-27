@@ -81,7 +81,7 @@ public class Product {
                 ", Name='" + name + '\'' +
                 ", Description='" + description + '\'' +
                 ", Cost='" + cost + 
-                '}';
+                "'}";
     }
 
     @Override
